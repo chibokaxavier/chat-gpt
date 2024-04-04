@@ -16,6 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <title>
+        ChatGpt clone
+      </title>
       <body className={inter.className}>{children}</body>
     </html>
   );
