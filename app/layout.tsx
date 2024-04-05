@@ -16,10 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <title>
-        ChatGpt clone
-      </title>
-      <body className={inter.className}>{children}</body>
+      <title>ChatGpt clone</title>
+      <body className={inter.className}>
+        <div>
+          {/* Sidebar  */}
+          {/* ClientProvider notification */}
+          <div className="bg-[#343541] flex-1">{children}</div>
+        </div>
+      </body>
     </html>
   );
 }
