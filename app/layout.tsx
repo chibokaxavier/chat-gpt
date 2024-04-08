@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/Sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,8 @@ export default function RootLayout({
     <html lang="en">
       <title>ChatGpt clone</title>
       <body className={inter.className}>
-        <div>
-          {/* Sidebar  */}
+        <div className="flex">
+          <Sidebar />
           {/* ClientProvider notification */}
           <div className="bg-[#343541] flex-1">{children}</div>
         </div>
