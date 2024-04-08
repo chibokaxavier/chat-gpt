@@ -1,3 +1,6 @@
+
+import { SunIcon } from "@heroicons/react/16/solid";
+import { BoltIcon, ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,7 +11,7 @@ export default function Home() {
       <div className="flex flex-row space-x-2 text-center">
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
-            {/* Sun Icon */}
+            <SunIcon className="h-8 w-8" />
             <h2>Examples</h2>
           </div>
           <div className="space-y-2">
@@ -22,7 +25,7 @@ export default function Home() {
 
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
-            {/* Sun Icon */}
+            <BoltIcon className="h-8 w-8" />
             <h2>Capabilities</h2>
           </div>
           <div className="space-y-2">
@@ -39,7 +42,7 @@ export default function Home() {
 
         <div>
           <div className="flex flex-col items-center justify-center mb-5">
-            {/* Sun Icon */}
+            <ExclamationTriangleIcon className="h-8 w-8" />
             <h2>Limitations</h2>
           </div>
           <div className="space-y-2">
