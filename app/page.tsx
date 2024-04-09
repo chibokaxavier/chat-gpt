@@ -1,9 +1,11 @@
-
+"use client";
+import Login from "@/components/Login";
 import { SunIcon } from "@heroicons/react/16/solid";
 import { BoltIcon, ExclamationTriangleIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
+  const { data: session } = useSession();
   return (
     <div className=" flex flex-col px-2 h-screen items-center justify-center text-white">
       <h1 className="text-5xl font-bold mb-20">ChatGPT</h1>
