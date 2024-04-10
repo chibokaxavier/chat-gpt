@@ -2,7 +2,7 @@
 import React from "react";
 import NewChat from "./NewChat";
 import Login from "./Login";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 function Sidebar() {
   const { data: session } = useSession();
@@ -15,6 +15,14 @@ function Sidebar() {
           {/* Map through the chatrows */}
         </div>
       </div>
+      {session && (
+        <img
+          onClick={() => signOut()}
+          src={session.user?.image!}
+          alt="profile image"
+          className="h-12 w-12 mx-auto hover:opacity-50 rounded-full cursor-pointer"
+        />
+      )}
     </div>
   );
 }
