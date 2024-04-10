@@ -1,8 +1,28 @@
+"use client";
+import { db } from "@/Firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function NewChat() {
+  const router = useRouter();
+  const { data: session } = useSession();
+  const createChat = async () => {
+    const doc = await addDoc(
+      collection(db, "users", session?.user?.email!, "chats"),
+      {
+        userId: session?.user?.email,
+        createdAt: serverTimestamp(),
+      }
+    );
+    router.push(`/chat/${doc.id}`);
+  };
   return (
-    <div className="border-gray-700 border flex justify-between chatRow">
+    <div
+      onClick={createChat}
+      className="border-gray-700 border flex justify-between chatRow"
+    >
       <div className="flex justify-center items-center space-x-2">
         <div className="bg-white rounded-full h-[35px] w-[35px] p-2 flex justify-center items-center">
           <img src="./openai.png" alt="" className="h-[20px] w-[20px]" />
