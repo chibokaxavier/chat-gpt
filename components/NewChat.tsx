@@ -1,6 +1,12 @@
 "use client";
 import { db } from "@/Firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  serverTimestamp,
+} from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -18,6 +24,7 @@ function NewChat() {
     );
     router.push(`/chat/${doc.id}`);
   };
+  
   return (
     <div
       onClick={createChat}
